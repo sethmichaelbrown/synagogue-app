@@ -19,17 +19,17 @@ const NavBar = (props) => {
       </nav>
 
       <ul className="sidenav" id="mobile-demo">
-        <li><div class="user-view">
-          <div class="background">
+        <li><div className="user-view">
+          <div className="background">
           </div>
-          <a href="#user"><img class="circle" src={userImage} /></a>
-          <a href="#name"><span class="white-text name">
+          <a href="#user"><img className="circle" src={userImage} /></a>
+          <a href="#name"><span className="white-text name">
             <h5>Welcome, Seth</h5>
           </span></a>
           <a className="waves-effect waves-light btn sign-out-btn">Sign Out</a>
         </div></li>
         <li><a onClick={props.toAdmin} className='sidenav-close'>Event List</a></li>
-        <li><div class="divider"></div></li>
+        <li><div className="divider"></div></li>
         <li><a onClick={props.toAdmin} className='sidenav-close'>Admin Portal</a></li>
       </ul>
     </div>
