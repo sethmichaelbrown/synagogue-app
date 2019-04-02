@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import Home from './components/Home'
 import Admin from './components/admin/Admin'
+import NavBar from './components/NavBar'
+import Welcome from './components/Welcome'
+
+import M from "materialize-css";
 import './App.css'
 
 const eventObj = [
@@ -48,6 +52,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    M.AutoInit()
     this.setState({ ...this.state, events: eventObj })
   }
 
@@ -62,6 +67,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <NavBar
+          toAdmin={this.toAdmin}
+        />
+        <div className="row container">
+          <Welcome />
+        </div>
+
         <div className="row container">
           {this.state.adminStatus ?
             <Admin
@@ -73,7 +85,6 @@ class App extends Component {
               events={this.state.events}
               filterString={this.state.filterString}
               searchQuery={this.searchQuery}
-              toAdmin={this.toAdmin}
             />
           }
         </div>

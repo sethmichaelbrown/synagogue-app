@@ -10,12 +10,26 @@ const EventList = (props) => {
 
   return (
     <div className="EventList">
-      <ul>
+      <ul className='collection'>
         {filteredEvents.map((event, idx) =>
-          <li id={event.id} key={idx} className='my-2'>
-            <div className="eventTitle">{event.title} - {event.date}</div>
-            <div className="eventDescription">{event.description}</div>
-            <button id={event.id}>Contribute</button>
+          <li id={event.id} key={idx} className='my-2 collection-item'>
+            <div className="row">
+              <div className="col s12">
+                <div className="eventTitle">
+                  <h5>{event.title} - {event.date}</h5>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col s12">
+                <div className="eventDescription">{event.description}</div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col s12">
+                <a id={event.id} className="waves-effect waves-light btn">Contribute</a>
+              </div>
+            </div>
           </li>
         )}
       </ul>

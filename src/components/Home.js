@@ -6,8 +6,8 @@ const Home = (props) => {
 
   return (
     <div className="Home">
-      <button onClick={props.toAdmin}>Admin</button>
-      <input type="text" onChange={props.searchQuery}/>
+
+      <input type="text" onChange={props.searchQuery} placeholder='Search Events...'/>
       <EventList
         events={props.events}
         filterString={props.filterString}
