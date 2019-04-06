@@ -11,6 +11,7 @@ const Home = (props) => {
       <EventList
         events={props.events}
         filterString={props.filterString}
+        selectEvent={props.selectEvent}
       />
     </div>
   )

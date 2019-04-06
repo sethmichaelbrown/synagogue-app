@@ -27,7 +27,7 @@ const EventList = (props) => {
             </div>
             <div className="row">
               <div className="col s12">
-                <a id={event.id} className="waves-effect waves-light btn">Contribute</a>
+                <a id={event.id} onClick={props.selectEvent} className="waves-effect waves-light btn modal-trigger" href="#modal1">Contribute</a>
               </div>
             </div>
           </li>
