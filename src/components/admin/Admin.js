@@ -6,7 +6,7 @@ import AdminSignIn from './AdminSignIn';
 class Admin extends Component {
 
   state = {
-    adminSignedIn: false,
+    adminSignedIn: true,
   }
 
   signIn = () => {

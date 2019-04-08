@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 import Home from './components/Home'
 import Admin from './components/admin/Admin'
-import AdminSignIn from './components/admin/AdminSignIn'
 import NavBar from './components/NavBar'
 import Welcome from './components/Welcome'
 import Modal from './components/Modal'

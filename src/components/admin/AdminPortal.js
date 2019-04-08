@@ -20,39 +20,43 @@ class AdminPortal extends Component {
     this.setState({ ...this.state, displayItem: '' })
   }
 
-  render() {
-    // console.log('Admin', props)
+  charCount = () => {
+    const textArea = document.getElementById('textarea2')
+  }
 
+  render() {
     return (
       <div className="AdminPortal">
         <div className="row container">
 
           <div className="row">
-            <button onClick={this.props.toAdmin}>Home</button>
+            <a onClick={this.props.toAdmin} class="waves-effect waves-light btn">Home</a>
           </div>
 
 
           <div className="row">
-            <button onClick={this.display} id='create'>Create Event</button>
-            <button onClick={this.display} id='edit'>Edit Event</button>
-            <button onClick={this.display} id='search'>Search Event</button>
+            <a onClick={this.display} id='create' class="waves-effect waves-light btn">Create Event</a>
+            <a onClick={this.display} id='edit' class="waves-effect waves-light btn">Edit Event</a>
+            <a onClick={this.display} id='search' class="waves-effect waves-light btn">Search Event</a>
           </div>
 
           <div className="row">
             {
               this.state.displayItem === 'create' &&
               <div>
-                <input type="text" placeholder='Event Title' />
-                <input type="date" placeholder='Event Date' />
-                <input type="text" placeholder='Event Description' data-length='250'/>
-
-                <div className="row">
-                  <button onClick={this.cancel}>Cancel</button>
-                  <button>Create</button>
-
+                <div>
+                  <input type="text" placeholder='Event Title' />
+                  <input type="date" placeholder='Event Date' />
                 </div>
 
+                <div className="row">
+                  <a onClick={this.cancel} class="waves-effect waves-light btn">Cancel</a>
+                  <a class="waves-effect waves-light btn">Create</a>
+
+                </div>
               </div>
+
+
             }
 
           </div>
