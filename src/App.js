@@ -8,40 +8,8 @@ import Modal from './components/Modal'
 import M from "materialize-css";
 import './App.css'
 
-const eventObj = [
-  {
-    id: 1,
-    date: '03/20/18',
-    title: 'Wedding 1',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste qui porro aut, aspernatur soluta odit ut, earum at eos libero debitis fugiat ea quasi? Consequuntur quisquam eum vel libero pariatur!'
-  },
-  {
-    id: 2,
-    date: '04/23/18',
-    title: 'Wedding 2',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste qui porro aut, aspernatur soluta odit ut, earum at eos libero debitis fugiat ea quasi? Consequuntur quisquam eum vel libero pariatur!'
-  },
-  {
-    id: 3,
-    date: '03/25/18',
-    title: 'Wedding 3',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste qui porro aut, aspernatur soluta odit ut, earum at eos libero debitis fugiat ea quasi? Consequuntur quisquam eum vel libero pariatur!'
-  },
-  {
-    id: 4,
-    date: '06/01/18',
-    title: 'Bar Mitzvah',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste qui porro aut, aspernatur soluta odit ut, earum at eos libero debitis fugiat ea quasi? Consequuntur quisquam eum vel libero pariatur!'
-  },
-  {
-    id: 5,
-    date: '05/10/18',
-    title: 'Bat Mitzvah',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste qui porro aut, aspernatur soluta odit ut, earum at eos libero debitis fugiat ea quasi? Consequuntur quisquam eum vel libero pariatur!'
-  },
-]
+const port = 'http://localhost:3000/events'
 
-// const val = 'date'
 // const dateSorted = eventObj.sort((a, b) => (a[`${val}`] > b[`${val}`]) ? 1 : ((b[`${val}`] > a[`${val}`]) ? -1 : 0))
 
 class App extends Component {
@@ -57,7 +25,13 @@ class App extends Component {
 
   componentDidMount() {
     M.AutoInit()
-    this.setState({ ...this.state, events: eventObj })
+    this.fetchEvents()
+  }
+
+  fetchEvents = async () => {
+    const res = await fetch(port)
+    const events = await res.json()
+    this.setState({...this.state, events})
   }
 
   toAdmin = () => {
