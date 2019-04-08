@@ -41,8 +41,8 @@ const eventObj = [
   },
 ]
 
-const val = 'date'
-const dateSorted = eventObj.sort((a, b) => (a[`${val}`] > b[`${val}`]) ? 1 : ((b[`${val}`] > a[`${val}`]) ? -1 : 0))
+// const val = 'date'
+// const dateSorted = eventObj.sort((a, b) => (a[`${val}`] > b[`${val}`]) ? 1 : ((b[`${val}`] > a[`${val}`]) ? -1 : 0))
 
 class App extends Component {
 
@@ -79,7 +79,7 @@ class App extends Component {
   }
 
   inputClickIn = (event) => {
-    this.setState({ ...this.state, clickedIn: true }, () => console.log(this.state))
+    this.setState({ ...this.state, clickedIn: true })
   }
 
   render() {

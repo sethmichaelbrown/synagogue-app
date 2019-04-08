@@ -1,6 +1,4 @@
 import React from 'react'
-import star from '../media/images/star-of-david.png'
-import background from '../media/images/react-background.png'
 
 const NavBar = (props) => {
   return (
