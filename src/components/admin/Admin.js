@@ -1,58 +1,35 @@
 import React, { Component } from 'react'
 
+import AdminPortal from './AdminPortal';
+import AdminSignIn from './AdminSignIn';
+
 class Admin extends Component {
 
   state = {
-    adminStatus: false,
-    displayItem: '',
+    adminSignedIn: false,
   }
 
-  display = (event) => {
-    this.setState({ ...this.state, displayItem: event.target.id })
+  signIn = () => {
+    this.setState({ ...this.state, adminSignedIn: true })
   }
 
-  cancel = () => {
-    this.setState({ ...this.state, displayItem: ''})
+  signOut = () => {
+    this.setState({ ...this.state, adminSignedIn: false })
   }
+
 
   render() {
-    // console.log('Admin', props)
-
     return (
       <div className="Admin">
-        <div className="row container">
+        {
+          this.state.adminSignedIn ?
+            <AdminPortal />
+            :
+            <AdminSignIn 
+              signIn={this.signIn}
+            />
+        }
 
-          <div className="row">
-            <button onClick={this.props.toAdmin}>Home</button>
-          </div>
-
-
-          <div className="row">
-            <button onClick={this.display} id='create'>Create Event</button>
-            <button onClick={this.display} id='edit'>Edit Event</button>
-            <button onClick={this.display} id='search'>Search Event</button>
-          </div>
-
-          <div className="row">
-            {
-              this.state.displayItem === 'create' &&
-              <div>
-                <input type="text" placeholder='Event Title' />
-                <input type="date" placeholder='Event Date' />
-                <input type="text" placeholder='Event Description' />
-
-                <div className="row">
-                  <button onClick={this.cancel}>Cancel</button>
-                  <button>Create</button>
-
-                </div>
-
-              </div>
-            }
-
-          </div>
-
-        </div>
       </div>
     )
   }

@@ -20,10 +20,9 @@ const NavBar = (props) => {
 
 
       <ul className="sidenav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
+        <li><a onClick={props.toAdmin} className='sidenav-close'>Events</a></li>
+        <li><div className="divider"></div></li>
+        <li><a onClick={props.toAdmin} className='sidenav-close'>Admin Portal</a></li>
       </ul>
     </div>
   )

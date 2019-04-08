@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+
 import Home from './components/Home'
 import Admin from './components/admin/Admin'
+import AdminSignIn from './components/admin/AdminSignIn'
 import NavBar from './components/NavBar'
 import Welcome from './components/Welcome'
 import Modal from './components/Modal'
@@ -15,7 +17,7 @@ const port = 'http://localhost:3000/events'
 class App extends Component {
 
   state = {
-    adminStatus: false,
+    adminStatus: true,
     clickedIn: false,
     contribution: null,
     events: [],
@@ -71,7 +73,7 @@ class App extends Component {
           toAdmin={this.toAdmin}
         />
         <div className="row container">
-          <Welcome />
+          {!this.state.adminStatus && <Welcome />}
         </div>
 
         <div className="row container">
