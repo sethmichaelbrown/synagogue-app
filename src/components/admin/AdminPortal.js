@@ -68,7 +68,7 @@ class AdminPortal extends Component {
                 <div>
                   <input type="text" placeholder='Event Title' onChange={this.newTitle} />
                   <input type="date" placeholder='Event Date' onChange={this.newDate} />
-                  <textarea id="textarea2" className="materialize-textarea" onChange={this.newText}></textarea>
+                  {/* <textarea id="textarea2" className="materialize-textarea" onChange={this.newText}></textarea> */}
                 </div>
 
                 <div className="row">
