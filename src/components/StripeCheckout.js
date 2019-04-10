@@ -1,16 +1,23 @@
 import React, { Component } from 'react'
 import StripeCheckout from 'react-stripe-checkout';
 
+
 class Checkout extends Component {
 
   onToken = (token) => {
-    fetch('/save-stripe-token', {
+    fetch('http://localhost:3000/contributions', {
       method: 'POST',
-      body: JSON.stringify(token),
+      body: JSON.stringify({
+        fName: 'Dick',
+        lName: 'Brown',
+        email: 'dbrown@gmail.com',
+        contribution: '20',
+        eventId: '5'
+      })
     }).then(response => {
       response.json().then(data => {
         alert(`We are in business, ${data.email}`);
-      });
+      }).catch(err => console.log(err));
     });
   }
 

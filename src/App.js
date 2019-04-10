@@ -16,7 +16,7 @@ const port = 'http://localhost:3000/events'
 class App extends Component {
 
   state = {
-    adminStatus: true,
+    adminStatus: false,
     clickedIn: false,
     contribution: null,
     events: [],
